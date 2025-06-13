@@ -31,13 +31,35 @@
       background-color: #2c2f4a;
       padding: 20px;
       border-radius: 10px;
-      max-width: 600px;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
     }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .tab {
+      background-color: #3b3e61;
+      padding: 10px 20px;
+      margin: 0 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .tab.active, .tab:hover {
+      background-color: #5865F2;
+    }
+    .tab-content {
+      display: none;
+      text-align: left;
+    }
+    .tab-content.active {
+      display: block;
+    }
     ul {
-      list-style: none;
-      padding: 0;
+      padding-left: 20px;
     }
   </style>
 </head>
@@ -48,24 +70,63 @@
   <section>
     <h2>ℹ️ Bot Hakkında</h2>
     <p style="font-size: 16px; line-height: 1.6;">
-      Shadow, gelişmiş moderasyon ve müzik özellikleriyle sunucunuzu daha güvenli ve eğlenceli hale getirir. <br><br>
-      🚨 <strong>Moderasyon</strong>: Ban, kick, mute, jail gibi komutlarla sunucunuza düzen getirir.<br>
-      🎵 <strong>Müzik</strong>: Yüksek kaliteli müzik sistemiyle YouTube’dan şarkılar çalabilirsiniz.<br>
-      🛠️ <strong>Özelleştirme</strong>: Tamamen Türkçe ve kolay kullanımlı komutlarla sunucunuzu özelleştirin.<br><br>
-      Shadow sürekli olarak güncellenir ve kullanıcı dostu arayüzüyle dikkat çeker.
+      Shadow, gelişmiş moderasyon ve müzik özellikleriyle sunucunuzu daha güvenli ve eğlenceli hale getirir.
+      <br><br>
+      🚨 <strong>Moderasyon</strong>, 🎵 <strong>Müzik</strong>, 🎉 <strong>Eğlence</strong> kategorileriyle komutlar kolayca erişilebilir!
     </p>
   </section>
 
-  <h2 style="margin-top: 50px;">📜 Komutlar</h2>
-  <ul>
-    <li>!yardım - Komutları gösterir</li>
-    <li>!ban - Kullanıcıyı banlar</li>
-    <li>!oynat - Müzik çalar</li>
-    <li>!durdur - Müzik durdurur</li>
-  </ul>
+  <section>
+    <h2>📜 Komutlar</h2>
+
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('moderasyon')">🛡️ Moderasyon</div>
+      <div class="tab" onclick="showTab('muzik')">🎵 Müzik</div>
+      <div class="tab" onclick="showTab('eglence')">🎉 Eğlence</div>
+    </div>
+
+    <div id="moderasyon" class="tab-content active">
+      <ul>
+        <li>!ban - Kullanıcıyı banlar</li>
+        <li>!kick - Kullanıcıyı atar</li>
+        <li>!mute - Kullanıcıyı susturur</li>
+        <li>!jail - Kullanıcıyı jail'e atar</li>
+      </ul>
+    </div>
+
+    <div id="muzik" class="tab-content">
+      <ul>
+        <li>!oynat - Müzik çalar</li>
+        <li>!durdur - Müzik durur</li>
+        <li>!geç - Şarkıyı atla</li>
+        <li>!döngü - Döngü modunu aç/kapat</li>
+      </ul>
+    </div>
+
+    <div id="eglence" class="tab-content">
+      <ul>
+        <li>!zar - Zar atar 🎲</li>
+        <li>!yazıtura - Yazı mı tura mı?</li>
+        <li>!espiri - Bot bir espri yapar</li>
+      </ul>
+    </div>
+  </section>
 
   <a href="https://discord.com/oauth2/authorize?client_id=1382820682542616717&scope=bot+applications.commands&permissions=8" class="button">
     🤖 Botu Sunucuna Ekle
   </a>
+
+  <script>
+    function showTab(id) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+
+      document.querySelector('.tab[onclick="showTab(\'' + id + '\')"]').classList.add('active');
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
