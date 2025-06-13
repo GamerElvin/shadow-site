@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Shadow Bot | GamerElvin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       background: #0d0d0d;
       color: #e0e0e0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Orbitron', sans-serif;
       padding: 20px;
       margin: 0;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1, h2 {
       text-align: center;
       color: #00BFFF;
+      text-shadow: 0 0 5px #00BFFF;
     }
 
     .button {
@@ -27,6 +35,12 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00BFFF;
+    }
+
+    .button:hover {
+      box-shadow: 0 0 20px #00BFFF, 0 0 40px #00BFFF;
     }
 
     .tabs {
@@ -51,6 +65,7 @@
     .tab-button:hover {
       background-color: #00BFFF;
       color: #0d0d0d;
+      box-shadow: 0 0 10px #00BFFF;
     }
 
     .tab-button.active {
@@ -67,6 +82,7 @@
       margin: auto;
       text-align: left;
       box-shadow: 0 0 10px #00BFFF44;
+      animation: fadeIn 0.7s ease;
     }
 
     .tab-content.active {
