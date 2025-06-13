@@ -6,11 +6,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #0d0d0d;
-      color: #e0e0e0;
-      font-family: 'Orbitron', sans-serif;
-      padding: 20px;
       margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #e0e0e0;
+      background: url('https://images.unsplash.com/photo-1607083203713-5fc381b84284?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: brightness(0.6) blur(2px);
       animation: fadeIn 1s ease-in;
     }
 
@@ -52,36 +54,37 @@
     }
 
     .tab-button {
-      background-color: #1c1c1c;
+      background-color: #1c1c1cdd;
       border: 1px solid #00BFFF;
       padding: 10px 20px;
       color: #00BFFF;
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
-      transition: 0.3s;
+      transition: all 0.3s ease-in-out;
     }
 
     .tab-button:hover {
       background-color: #00BFFF;
       color: #0d0d0d;
-      box-shadow: 0 0 10px #00BFFF;
+      box-shadow: 0 0 15px #00BFFF, 0 0 30px #00BFFF;
     }
 
     .tab-button.active {
       background-color: #00BFFF;
       color: #0d0d0d;
+      box-shadow: 0 0 20px #00BFFF, 0 0 40px #00BFFF;
     }
 
     .tab-content {
       display: none;
-      background: #1a1a1a;
+      background: rgba(0, 0, 0, 0.6);
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
       max-width: 800px;
       margin: auto;
       text-align: left;
-      box-shadow: 0 0 10px #00BFFF44;
+      box-shadow: 0 0 15px #00BFFF99;
       animation: fadeIn 0.7s ease;
     }
 
