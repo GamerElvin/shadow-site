@@ -6,11 +6,11 @@
   <style>
     body {
       background: #1e1e2f;
-      color: white;
+      color: #ffffff;
       font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      padding: 40px;
       margin: 0;
+      padding: 40px 20px;
+      text-align: center;
     }
     .button {
       display: inline-block;
@@ -21,32 +21,26 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s;
-    }
-    .button:hover {
-      background: #4752c4;
     }
     section {
-      margin-top: 40px;
       background-color: #2c2f4a;
-      padding: 20px;
+      padding: 30px;
       border-radius: 10px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 800px;
+      margin: 40px auto;
     }
     .tabs {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       margin-bottom: 20px;
     }
     .tab {
       background-color: #3b3e61;
       padding: 10px 20px;
-      margin: 0 5px;
+      margin: 5px;
       border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s;
     }
     .tab.active, .tab:hover {
       background-color: #5865F2;
@@ -54,6 +48,7 @@
     .tab-content {
       display: none;
       text-align: left;
+      padding: 20px;
     }
     .tab-content.active {
       display: block;
@@ -61,72 +56,83 @@
     ul {
       padding-left: 20px;
     }
+    h1, h2 {
+      margin-top: 0;
+    }
   </style>
 </head>
 <body>
-  <h1>🤖 Shadow</h1>
-  <p>Moderasyon, müzik ve daha fazlası!</p>
 
-  <section>
-    <h2>ℹ️ Bot Hakkında</h2>
-    <p style="font-size: 16px; line-height: 1.6;">
-      Shadow, gelişmiş moderasyon ve müzik özellikleriyle sunucunuzu daha güvenli ve eğlenceli hale getirir.
-      <br><br>
-      🚨 <strong>Moderasyon</strong>, 🎵 <strong>Müzik</strong>, 🎉 <strong>Eğlence</strong> kategorileriyle komutlar kolayca erişilebilir!
-    </p>
-  </section>
-
-  <section>
-    <h2>📜 Komutlar</h2>
-
-    <div class="tabs">
-      <div class="tab active" onclick="showTab('moderasyon')">🛡️ Moderasyon</div>
-      <div class="tab" onclick="showTab('muzik')">🎵 Müzik</div>
-      <div class="tab" onclick="showTab('eglence')">🎉 Eğlence</div>
-    </div>
-
-    <div id="moderasyon" class="tab-content active">
-      <ul>
-        <li>!ban - Kullanıcıyı banlar</li>
-        <li>!kick - Kullanıcıyı atar</li>
-        <li>!mute - Kullanıcıyı susturur</li>
-        <li>!jail - Kullanıcıyı jail'e atar</li>
-      </ul>
-    </div>
-
-    <div id="muzik" class="tab-content">
-      <ul>
-        <li>!oynat - Müzik çalar</li>
-        <li>!durdur - Müzik durur</li>
-        <li>!geç - Şarkıyı atla</li>
-        <li>!döngü - Döngü modunu aç/kapat</li>
-      </ul>
-    </div>
-
-    <div id="eglence" class="tab-content">
-      <ul>
-        <li>!zar - Zar atar 🎲</li>
-        <li>!yazıtura - Yazı mı tura mı?</li>
-        <li>!espiri - Bot bir espri yapar</li>
-      </ul>
-    </div>
-  </section>
+  <h1>🤖 Shadow Bot</h1>
+  <p>Prefix: <code>.</code> • Geliştirici: <strong>GamerElvin</strong></p>
 
   <a href="https://discord.com/oauth2/authorize?client_id=1382820682542616717&scope=bot+applications.commands&permissions=8" class="button">
     🤖 Botu Sunucuna Ekle
   </a>
 
+  <section>
+    <h2>📜 Komutlar</h2>
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('muzik')">🎵 Müzik</div>
+      <div class="tab" onclick="showTab('moderasyon')">🛡️ Moderasyon</div>
+      <div class="tab" onclick="showTab('emoji')">😊 Emoji</div>
+      <div class="tab" onclick="showTab('genel')">📄 Genel</div>
+    </div>
+
+    <div id="muzik" class="tab-content active">
+      <ul>
+        <li><code>.devam</code> - Duraklatılmış müziği devam ettirir.</li>
+        <li><code>.döngü</code> - Şarkı/kuyruk için döngü modunu açar/kapatır.</li>
+        <li><code>.duraklat</code> - Çalan müziği duraklatır.</li>
+        <li><code>.durdur</code> - Müziği durdurur ve sesten çıkar.</li>
+        <li><code>.geç</code> - Sıradaki şarkıya geçer.</li>
+        <li><code>.karıştır</code> - Kuyruğu karıştırır.</li>
+        <li><code>.kuyruk</code> - Kuyruğu gösterir.</li>
+        <li><code>.ses</code> - Ses seviyesini ayarlar/gösterir.</li>
+        <li><code>.çal</code> - Bir müzik çalar.</li>
+        <li><code>.çık</code> - Bot sesten çıkar (müzik durmaz).</li>
+      </ul>
+    </div>
+
+    <div id="moderasyon" class="tab-content">
+      <ul>
+        <li><code>.ban</code> - Kullanıcıyı yasaklar.</li>
+        <li><code>.jail</code> - Kullanıcıyı jaile atar.</li>
+        <li><code>.mute</code> - Kullanıcıyı susturur.</li>
+        <li><code>.sil</code> - Mesajları siler.</li>
+        <li><code>.tempban</code> - Süreli ban atar.</li>
+        <li><code>.tempmute</code> - Süreli susturma.</li>
+        <li><code>.unban</code> - Banı kaldırır.</li>
+        <li><code>.unjail</code> - Jail'den çıkarır.</li>
+        <li><code>.unmute</code> - Susturmayı kaldırır.</li>
+      </ul>
+    </div>
+
+    <div id="emoji" class="tab-content">
+      <ul>
+        <li><code>.emoji-ekle</code> - Emoji ekler.</li>
+        <li><code>.emoji-listele</code> - Emojileri listeler.</li>
+        <li><code>.emoji-sil</code> - Emoji siler.</li>
+      </ul>
+    </div>
+
+    <div id="genel" class="tab-content">
+      <ul>
+        <li><code>.yardım</code> - Komut listesini gösterir.</li>
+      </ul>
+    </div>
+  </section>
+
   <script>
     function showTab(id) {
       const tabs = document.querySelectorAll('.tab');
       const contents = document.querySelectorAll('.tab-content');
-
       tabs.forEach(tab => tab.classList.remove('active'));
       contents.forEach(content => content.classList.remove('active'));
-
-      document.querySelector('.tab[onclick="showTab(\'' + id + '\')"]').classList.add('active');
+      document.querySelector('.tab[onclick="showTab(\'' + id + '\')']").classList.add('active');
       document.getElementById(id).classList.add('active');
     }
   </script>
+
 </body>
 </html>
