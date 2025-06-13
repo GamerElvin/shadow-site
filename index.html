@@ -1,182 +1,101 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Shadow Bot | GamerElvin</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bot Yardım Komutları</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Orbitron', sans-serif;
       color: #e0e0e0;
-      background: url('https://images.unsplash.com/photo-1607083203713-5fc381b84284?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1584697964154-afe110f35fd8?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       backdrop-filter: brightness(0.6) blur(2px);
       animation: fadeIn 1s ease-in;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 16px;
+      margin-top: 50px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
     }
-
     h1, h2 {
       text-align: center;
-      color: #00BFFF;
-      text-shadow: 0 0 5px #00BFFF;
+      color: #fff;
     }
-
-    .button {
-      display: inline-block;
-      background: #00BFFF;
-      color: #0d0d0d;
-      padding: 12px 20px;
-      margin: 20px auto;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-      box-shadow: 0 0 10px #00BFFF;
-    }
-
-    .button:hover {
-      box-shadow: 0 0 20px #00BFFF, 0 0 40px #00BFFF;
-    }
-
-    .tabs {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .tab-button {
-      background-color: #1c1c1cdd;
-      border: 1px solid #00BFFF;
-      padding: 10px 20px;
-      color: #00BFFF;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .tab-button:hover {
-      background-color: #00BFFF;
-      color: #0d0d0d;
-      box-shadow: 0 0 15px #00BFFF, 0 0 30px #00BFFF;
-    }
-
-    .tab-button.active {
-      background-color: #00BFFF;
-      color: #0d0d0d;
-      box-shadow: 0 0 20px #00BFFF, 0 0 40px #00BFFF;
-    }
-
-    .tab-content {
-      display: none;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 800px;
-      margin: auto;
-      text-align: left;
-      box-shadow: 0 0 15px #00BFFF99;
-      animation: fadeIn 0.7s ease;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
     ul {
-      padding-left: 20px;
+      list-style: none;
+      padding: 0;
     }
-
-    code {
-      background: #333;
-      padding: 2px 5px;
-      border-radius: 4px;
-      color: #00BFFF;
+    li {
+      margin: 5px 0;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    .prefix {
+      font-weight: bold;
+      color: #ffd700;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>🤖 Komut Listesi</h1>
+    <p class="prefix">Prefix: <code>.</code></p>
 
-  <h1>🤖 Shadow Bot</h1>
-  <p style="text-align: center;">Prefix: <code>.</code> | Geliştirici: <strong>GamerElvin</strong></p>
+    <section>
+      <h2>🎵 Müzik Komutları</h2>
+      <ul>
+        <li>• <code>.devam</code> - Duraklatılmış müziği devam ettirir.</li>
+        <li>• <code>.döngü</code> - Şarkı veya kuyruk için döngü modunu açar/kapatır.</li>
+        <li>• <code>.duraklat</code> - Çalan müziği duraklatır.</li>
+        <li>• <code>.durdur</code> - Çalan müziği durdurur ve ses kanalından çıkar.</li>
+        <li>• <code>.geç</code> - Sıradaki şarkıya geçer.</li>
+        <li>• <code>.karıştır</code> - Çalma sırasındaki şarkıları karıştırır.</li>
+        <li>• <code>.kuyruk</code> - Müzik kuyruğunu gösterir.</li>
+        <li>• <code>.ses</code> - Ses seviyesini ayarlar veya gösterir.</li>
+        <li>• <code>.çal</code> - Bir müzik çalar.</li>
+        <li>• <code>.çık</code> - Bot ses kanalından çıkar (müziği durdurmaz).</li>
+      </ul>
+    </section>
 
-  <div style="text-align: center;">
-    <a href="https://discord.com/oauth2/authorize?client_id=1382820682542616717&scope=bot+applications.commands&permissions=8" class="button">
-      🤖 Botu Davet Et
-    </a>
+    <section>
+      <h2>🛠️ Moderasyon Komutları</h2>
+      <ul>
+        <li>• <code>.ban</code> - Bir kullanıcıyı sunucudan yasaklar.</li>
+        <li>• <code>.jail</code> - Bir kullanıcıyı jaile atar (yetkilerini kısıtlar).</li>
+        <li>• <code>.mute</code> - Bir kullanıcıyı susturur.</li>
+        <li>• <code>.sil</code> - Belirtilen kadar mesajı siler (en fazla 100).</li>
+        <li>• <code>.tempban</code> - Bir kullanıcıyı belirli bir süreliğine sunucudan banlar.</li>
+        <li>• <code>.tempmute</code> - Belirli bir süreliğine bir kullanıcıyı susturur.</li>
+        <li>• <code>.unban</code> - Bir kullanıcının yasağını kaldırır.</li>
+        <li>• <code>.unjail</code> - Bir kullanıcıyı jailden çıkarır.</li>
+        <li>• <code>.unmute</code> - Susturulmuş bir kullanıcının susturmasını kaldırır.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>😊 Emoji Komutları</h2>
+      <ul>
+        <li>• <code>.emoji-ekle</code> - Sunucuya yeni bir emoji ekler.</li>
+        <li>• <code>.emoji-listele</code> - Sunucudaki tüm özel emojileri listeler.</li>
+        <li>• <code>.emoji-sil</code> - Sunucudan bir emojiyi siler.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📄 Genel Komutlar</h2>
+      <ul>
+        <li>• <code>.yardım</code> - Tüm komutları ve açıklamalarını listeler.</li>
+      </ul>
+    </section>
   </div>
-
-  <div class="tabs">
-    <button class="tab-button active" onclick="showTab('muzik')">🎵 Müzik</button>
-    <button class="tab-button" onclick="showTab('moderasyon')">🛡️ Moderasyon</button>
-    <button class="tab-button" onclick="showTab('emoji')">😊 Emoji</button>
-    <button class="tab-button" onclick="showTab('genel')">📄 Genel</button>
-  </div>
-
-  <div id="muzik" class="tab-content active">
-    <ul>
-      <li><code>.devam</code> - Duraklatılmış müziği devam ettirir.</li>
-      <li><code>.döngü</code> - Döngü modunu açar/kapatır.</li>
-      <li><code>.duraklat</code> - Müziği duraklatır.</li>
-      <li><code>.durdur</code> - Müziği durdurur ve çıkar.</li>
-      <li><code>.geç</code> - Sıradaki şarkıya geçer.</li>
-      <li><code>.karıştır</code> - Kuyruğu karıştırır.</li>
-      <li><code>.kuyruk</code> - Kuyruğu gösterir.</li>
-      <li><code>.ses</code> - Ses seviyesini ayarlar/gösterir.</li>
-      <li><code>.çal</code> - Bir müzik çalar.</li>
-      <li><code>.çık</code> - Bot ses kanalından çıkar (müzik durmaz).</li>
-    </ul>
-  </div>
-
-  <div id="moderasyon" class="tab-content">
-    <ul>
-      <li><code>.ban</code> - Kullanıcıyı yasaklar.</li>
-      <li><code>.jail</code> - Kullanıcıyı jail'e atar.</li>
-      <li><code>.mute</code> - Kullanıcıyı susturur.</li>
-      <li><code>.sil</code> - Mesajları siler.</li>
-      <li><code>.tempban</code> - Süreli ban atar.</li>
-      <li><code>.tempmute</code> - Süreli mute atar.</li>
-      <li><code>.unban</code> - Banı kaldırır.</li>
-      <li><code>.unjail</code> - Jail'den çıkarır.</li>
-      <li><code>.unmute</code> - Susturmayı kaldırır.</li>
-    </ul>
-  </div>
-
-  <div id="emoji" class="tab-content">
-    <ul>
-      <li><code>.emoji-ekle</code> - Yeni emoji ekler.</li>
-      <li><code>.emoji-listele</code> - Emojileri listeler.</li>
-      <li><code>.emoji-sil</code> - Emoji siler.</li>
-    </ul>
-  </div>
-
-  <div id="genel" class="tab-content">
-    <ul>
-      <li><code>.yardım</code> - Tüm komutları listeler.</li>
-    </ul>
-  </div>
-
-  <script>
-    function showTab(id) {
-      const buttons = document.querySelectorAll('.tab-button');
-      const tabs = document.querySelectorAll('.tab-content');
-
-      buttons.forEach(btn => btn.classList.remove('active'));
-      tabs.forEach(tab => tab.classList.remove('active'));
-
-      document.querySelector(`[onclick="showTab('${id}')"]`).classList.add('active');
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
-
 </body>
 </html>
